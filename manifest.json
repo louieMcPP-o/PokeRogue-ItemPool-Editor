@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "PokeRogue Shop Odds",
+  "version": "1.0",
+  "description": "Adjust the weight of items in the PokeRogue reward shop.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["https://pokerogue.net/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Shop odds"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://pokerogue.net/*"],
+      "js": ["mod.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    }
+  ]
+}
